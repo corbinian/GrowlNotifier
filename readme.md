@@ -56,6 +56,12 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+###Icon
+
+##Sublime-Text-2-Icon
+Author:Daniel Matarazzo(dmatarazzo) https://github.com/dmatarazzo
+
+link:https://github.com/dmatarazzo/Sublime-Text-2-Icon
 
 ##License:
 Copyright:2012 (c) Corbinian Bergunde <http://corbinian-bergunde.de>
