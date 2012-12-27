@@ -85,7 +85,7 @@ class GrowlNotifier:
                 noteType = "New Messages",
                 title = "Sublime Text 2",
                 description = message,
-                icon = "http://d2o0t5hpnwv4c1.cloudfront.net/1038_sublime/sublime.png",
+                icon = "https://raw.github.com/dmatarazzo/Sublime-Text-2-Icon/master/st2_icon_128.png",
                 sticky = False,
                 priority = 1,)
 
