@@ -7,6 +7,7 @@ At this moments the plugin support a few events but i promise it will support mo
 
 ###Important
 If you use Snow Leopard or Growl version 1.2 you have to allow "Incoming Messages" in the growl preferences.
+And allow "Allow remote application registration" in the growl preferences.
 
 
 ## Sublime Text 2 Installation

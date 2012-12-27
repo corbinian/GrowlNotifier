@@ -2,7 +2,7 @@ __version__ = "0.0.1"
 __author__ = "Corbinian Bergunde (http://corbinian-bergunde.de)"
 __copyright__ = "(C) 2012 Corbinian Bergunde. Code under BSD License."
 
-import sublime,sublime_plugin,traceback,sys
+import sublime,sublime_plugin,traceback
 
 
 class GrowlNotifier:
