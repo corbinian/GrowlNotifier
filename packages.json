@@ -11,7 +11,7 @@
                 "osx": [
                     {
                         "version": "0.0.1",
-                        "url": "https://nodeload.github.com/corbinian/GrowlNotifier/archive/master.zip"
+                        "url": "https://nodeload.github.com/corbinian/GrowlNotifier/zipball/master"
                     }
                 ]
             }
