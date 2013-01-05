@@ -1,14 +1,16 @@
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Corbinian Bergunde (http://corbinian-bergunde.de)"
 __copyright__ = "(C) 2012 Corbinian Bergunde. Code under BSD License."
 
-import sublime,sublime_plugin,traceback
+import sublime_plugin,traceback, pdb,sublime
+from inspect import getmembers
+from pprint import pprint
 
 
-class GrowlNotifier:
+class GrowlNotifier(object):
 
     def __init__(self):
-        events()
+        super(GrowlNotifier, self).__init__()
 
     def sendmessage(self,message):
         import platform
@@ -18,25 +20,28 @@ class GrowlNotifier:
         Windows = "Windows"
         Linux = "Linux"
 
-        if platform.system() == Mac:
-            #Snow Leopard detected
-            if platform.release() == "10.8.0":
-                self.netgrowlnotification(message)
-            #Lion 10.7+  detected
-            elif platform.release() >= "10.8.0":
-                self.gntpnotification(message)
-            #below snow leopard  deteced
-            else:
-                self.netgrowlnotification(message)
+        try:
+            if platform.system() == Mac:
+                #Snow Leopard detected
+                if platform.release() == "10.8.0":
+                    self.netgrowlnotification(message)
 
+                #Lion 10.7+  detected
+                elif platform.release() >= "10.8.0":
+                    self.gntpnotification(message)
+                #below snow leopard  deteced
+                else:
+                    self.netgrowlnotification(message)
 
-        elif platform.system() == Windows:
-                self.gntpnotification(message)
-
-        elif platform.system() == Linux:
+            elif platform.system() == Windows:
                 self.gntpnotification(message)
 
-        pass
+            elif platform.system() == Linux:
+                self.gntpnotification(message)
+
+        except Exception as e:
+            print e
+
 
     def netgrowlnotification(self,message):
         """
@@ -95,7 +100,9 @@ class GrowlNotifier:
 
 class events(sublime_plugin.EventListener):
 
-
+    def __init__(self):
+        super(events, self).__init__()
+        self.on_theme_changed()
 
     def on_new(self,view):
         GrowlNotifier().sendmessage("Open new Window")
@@ -104,7 +111,6 @@ class events(sublime_plugin.EventListener):
         GrowlNotifier().sendmessage("View was Cloned")
 
     def on_load(self,view):
-        print view.file_name()
         GrowlNotifier().sendmessage('File: "' + view.file_name() + '" were loaded')
 
     def on_close(self,view):
@@ -113,9 +119,15 @@ class events(sublime_plugin.EventListener):
     def on_post_save(self,view):
         GrowlNotifier().sendmessage('File: "' + view.file_name() +  '" were saved')
 
+    def on_plugin_update(self):
+        GrowlNotifier().sendmessage('Plugin was updatet')
 
+    def on_theme_changed(self):
 
+        settings = sublime.load_settings('Preferences.sublime-settings')
+            #GrowlNotifier().sendmessage('Theme was changed')
 
 
 
 events()
+

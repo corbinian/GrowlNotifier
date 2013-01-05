@@ -1,0 +1,20 @@
+{
+    "schema_version": "1.2",
+    "packages": [
+        {
+            "name": "GrowlNotifier",
+            "description": "GrowlNotifier is a plugin which use growl notfication with user events.",
+            "author": "Corbinian Bergunde",
+            "homepage": "https://github.com/corbinian/GrowlNotifier/",
+            "last_modified": "2013-01-05 16:03:00",
+            "platforms": {
+                "osx": [
+                    {
+                        "version": "0.0.1",
+                        "url": "https://github.com/corbinian/GrowlNotifier/archive/master.zip"
+                    }
+                ]
+            }
+        }
+    ]
+}
